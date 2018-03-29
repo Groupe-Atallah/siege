@@ -1,5 +1,14 @@
-
-                       Siege README
+## Installing on macOS
+```
+brew install autoconf automake libtool
+./utils/bootstrap
+./configure
+make
+make install
+```               
+                       
+                      
+Siege README
 
 WHAT IS IT?
 -----------

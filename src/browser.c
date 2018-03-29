@@ -470,7 +470,7 @@ __http(BROWSER this, URL U)
   /**
    * write to socket with a GET/POST/PUT/DELETE/HEAD
    */
-  if (url_get_method(U) == POST || url_get_method(U) == PUT || url_get_method(U) == PATCH) {
+  if (url_get_method(U) == POST || url_get_method(U) == PUT || url_get_method(U) == PATCH || url_get_method(U) == DELETE) {
     if ((http_post(this->conn, U)) == FALSE) {
       this->conn->connection.reuse = 0;
       socket_close(this->conn);

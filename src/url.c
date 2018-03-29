@@ -582,6 +582,10 @@ __url_parse(URL this, char *url)
     post = strstr(this->url, " PATCH");
   }
 
+  if (! post) {
+    post = strstr(this->url, " DELETE");
+  }
+
   if (post != NULL){
     if (!strncasecmp(post," PUT", 4)) {
       this->method = PUT;
@@ -591,6 +595,10 @@ __url_parse(URL this, char *url)
       this->method = POST;
       *post = '\0';
       post += 5;
+    } else if (!strncasecmp(post," DELETE", 7)) {
+      this->method = DELETE;
+      *post = '\0';
+      post += 7;
     } else {
       this->method = PATCH;
       *post = '\0';
